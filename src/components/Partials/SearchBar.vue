@@ -3,12 +3,12 @@
     <span>
       <search-icon />
     </span>
-    <form>
+    <form @submit.prevent="$emit('search-for-photos', query)">
       <input
         type="text"
         class="search-bar__input"
         placeholder="Search for photo"
-        v-model="searchValue"
+        v-model="query"
       />
     </form>
   </div>
@@ -22,18 +22,18 @@ export default {
   },
   data() {
     return {
-      searchValue: "",
+      query: "",
     };
   },
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .search-bar {
   display: flex;
-  background-color: #ffffff;
+  background-color: var(--white);
   border-radius: 5px;
-  width: 70%;
+  width: 100%;
   height: 3.5rem;
   align-items: center;
   padding: 0 1rem;
@@ -42,20 +42,20 @@ form {
   margin-left: 1rem;
   width: 100%;
   border: none;
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 .search-bar__input {
   width: 100%;
   height: 100%;
   border: none;
-  background-color: #ffffff;
+  background-color: var(--white);
   color: #111;
-}
-.search-bar__input:focus {
-  outline: none;
-}
-.search-bar__input::placeholder {
-  color: #8b929c;
-  font-weight: bold;
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: #8b929c;
+    font-weight: bold;
+  }
 }
 </style>
