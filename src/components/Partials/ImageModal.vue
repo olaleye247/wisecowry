@@ -80,7 +80,6 @@ export default {
   @media screen and (max-width: 900px) {
     .image-modal-content {
       width: 90% !important;
-      padding: 0.5rem;
     }
   }
 }

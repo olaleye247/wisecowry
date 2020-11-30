@@ -113,6 +113,9 @@ export default {
   grid-gap: 15px 50px;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-auto-rows: 10px;
+  @media screen and (max-width: 700px) {
+    // grid-template-columns: repeat(auto-fill, minmax(90%, 1fr));
+  }
 }
 .image {
   max-width: 100%;
